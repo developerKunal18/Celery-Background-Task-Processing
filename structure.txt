@@ -1,0 +1,64 @@
+🧠 Why This Is Important
+
+Without background processing:
+Client
+   │
+   ▼
+Flask API
+   │
+Long Task (30 sec)
+   │
+   ▼
+Response
+
+The client waits until the task completes.
+
+With Celery:
+Client
+   │
+   ▼
+Flask API
+   │
+Task Queued
+   │
+   ▼
+Response Immediately
+
+        │
+        ▼
+Redis Queue
+        │
+        ▼
+Celery Worker
+        │
+        ▼
+Background Task
+
+Benefits:
+✅ Faster API responses
+✅ Asynchronous processing
+✅ Scalable workers
+✅ Reliable task execution
+
+Used By :
+Instagram
+Reddit
+Airbnb
+Shopify
+Django applications
+
+🛠 Tech Stack
+Python
+Flask
+Celery
+Redis
+Docker
+
+📂 Project Structure
+celery-background-tasks/
+│
+├── app.py
+├── tasks.py
+├── requirements.txt
+├── docker-compose.yml
+└── README.md

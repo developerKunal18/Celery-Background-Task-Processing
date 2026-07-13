@@ -1,0 +1,5 @@
+POST /send-email
+
+{
+    "email": "user@example.com"
+}
